@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="app" ng-controller="rootController" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="app" ng-controller="rootController" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="app" ng-controller="rootController" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="app" ng-controller="rootController" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Watch Your Sales</title>
+    <meta name="description" content="Sales Management Application">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+    -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" href="bower_components/ng-notify/dist/ng-notify.min.css">
+    <link rel="stylesheet" href="bower_components/selectize/dist/css/selectize.css"/>
+    <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.min.css"/>
+    <link rel="stylesheet" href="bower_components/angular-block-ui/dist/angular-block-ui.min.css"/>
+    <link rel="stylesheet" href="bower_components/angular.panels/dist/angular.panels.min.css">
+
+    <link rel="stylesheet" href="assets/home.css">
+    <!--
+    <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    -->
+    /head>
+<body x-presence>
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div id="header">
+    <nav class="navbar navbar-default navbar-fixed-top" x-role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" x-toggle="collapse" x-target=".navbar-inverse-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home-d.html">Watch Your Sales</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <form class="navbar-form navbar-left">
+                    <button class="btn btn-default" x-ng-click="showLeftMenu()">
+                        <i class="fa fa-bars"></i>&nbsp;
+                    </button>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a x-ng-href="#/home"><i class="fa fa-home"></i> Home</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" x-ng-hide="isLoggedIn">
+                    <li>
+                        <a href="#/settings"><i class="fa fa-cog"></i> Settings</a>
+                    </li>
+                    <li>
+                        <a href="#/signout"><i class="fa fa-sign-out"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="breadCrumb" class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <strong>
+                            <small>{{viewName | capitalizeFilter}}</small>
+                        </strong>
+                    </div>
+                    <div class="col-md-9 text-right">
+                        <strong>
+                            <small>
+                                {{sessionS.context.sessionDto.firstName}} / {{sessionS.context.sessionDto.userId}} /
+                                {{sessionS.context.sessionDto.roleId | capitalizeFilter}}
+                            </small>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+</div>
+
+<section class="container-fluid">
+    <div class="container" x-ng-view></div>
+</section>
+
+<div id="footer">
+    <x-footer-navigator></x-footer-navigator>
+</div>
+
+<div data-panels="true"></div>
+
+<script src="bower_components/lodash/lodash.min.js"></script>
+<script src="bower_components/moment/min/moment.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+
+<script src="bower_components/ngstorage/ngStorage.min.js"></script>
+<script src="bower_components/holderjs/holder.min.js"></script>
+<script src="bower_components/angular-holderjs/src/holder.js"></script>
+<script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+<script src="bower_components/angular-h-sweetalert/dist/ngSweetAlert.min.js"></script>
+<script src="bower_components/ng-notify/dist/ng-notify.min.js"></script>
+<script src="bower_components/angular-block-ui/dist/angular-block-ui.min.js"></script>
+<script src='bower_components/angular-ui-select/dist/select.min.js'></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="bower_components/angular.panels/dist/angular.panels.min.js"></script>
+<script src="bower_components/angular-presence/angular-presence.min.js"></script>
+<script src="bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js"></script>
+<script src="bower_components/angular-inputmask/src/green.inputmask4angular.js"></script>
+
+<script src="modules/init.js"></script>
+
+<script src="modules/wydNotify/wydNotifyByNgNotify.js"></script>
+<script src="modules/session/angularPresence.js"></script>
+
+<script src="modules/sessionService.js"></script>
+
+<script src="modules/home/homeController.js"></script>
+
+<script src="modules/session/settingController.js"></script>
+
+<script src="modules/session/logoutController.js"></script>
+
+<script src="modules/common.js"></script>
+<script src="modules/directives.js"></script>
+<script src="modules/home-d.js"></script>
+
+</body>
+</html>
