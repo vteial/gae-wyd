@@ -1,8 +1,5 @@
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-	<!-- 
-    <application>wybis-wyd</application>
-    -->
-    <application>wyd</application>
+    <application>gae-wyd</application>
     
     <version>1</version>
 
