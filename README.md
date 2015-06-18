@@ -1,2 +1,1 @@
-## GAE seed app for WYBIS 
-
+## GAE seed application for WYBIS
